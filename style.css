@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+
+
+body {
+    background-color: rgb(150, 201, 216);
+}
+
+.container {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 265px);
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+}
+
+nav {
+    background-color: #333;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.container li {
+    list-style: none;
+    height: 250px;
+    padding: 15px 20px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.spans {
+    list-style: none;
+    height: 150px;
+    overflow-y: auto;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+
+.add-notes,
+.icon,
+.bottom,
+.popup,
+.content header,
+.changes .menu li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-notes {
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.add-notes:hover {
+    background-color: #e8e8e8;
+}
+
+.add-notes .icon {
+    font-size: 30px;
+    color: #888;
+}
+
+.add-notes p {
+    margin: 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.note p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.note span {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: block;
+}
+
+.note .bottom {
+    border-left-style: outset;
+    border-left-color: coral;
+    border-left-width: 5px;
+}
+
+.changes {
+    position: relative;
+}
+
+.container .note {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.changes i {
+    cursor: pointer;
+}
+
+.changes .menu {
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    border-radius: 4px;
+    background: #fff;
+    padding: 5px 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease;
+}
+
+.changes:hover .menu {
+    transform: scale(1);
+}
+
+.changes .menu li {
+    height: 20px;
+    border-radius: 0;
+    padding: 17px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    justify-content: flex-start;
+}
+
+.menu li:hover {
+    background: #f5f5f5;
+}
+
+.menu li i {
+    padding-right: 8px;
+}
+
+.popup-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.popup-box .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.popup-box,
+.popup-box .popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.popup-box.show,
+.popup-box.show .popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-box.show .popup {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup .content {
+    border-radius: 5px;
+    background: #fff;
+    width: calc(100% - 15px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.popup .content header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content header p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content header i {
+    color: #8b8989;
+    font-size: 23px;
+}
+
+.content form {
+    margin: 15px 25px 35px;
+}
+
+.content form .row {
+    margin-bottom: 20px;
+}
+
+form .row label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+form :where(input, textarea) {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #999;
+}
+
+form :where(input, textarea):focus {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
+}
+
+form .row textarea {
+    height: 150px;
+    resize: none;
+    padding: 8px 15px;
+}
+
+form button {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    outline: none;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 4px;
+    background: rgb(150, 201, 216);
+
+}
